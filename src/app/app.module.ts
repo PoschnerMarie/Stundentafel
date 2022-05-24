@@ -12,7 +12,7 @@ import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/
   declarations: [
     AppComponent,
     TafelComponent,
-    ZelleComponent
+    ZelleComponent,
     TabellenbeschreibungComponent
   ],
   imports: [
