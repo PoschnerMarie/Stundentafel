@@ -7,6 +7,9 @@ import { TafelComponent } from './component/tafel/tafel.component';
 import { ZelleComponent } from './component/zelle/zelle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/tabellenbeschreibung.component';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +21,13 @@ import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
