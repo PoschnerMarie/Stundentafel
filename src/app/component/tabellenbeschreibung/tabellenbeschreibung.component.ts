@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabellenbeschreibungComponent implements OnInit {
 
-  constructor() { }
+  blockNummer: number;
+
+  constructor() {
+    this.blockNummer = 1;
+   }
 
   ngOnInit(): void {
   }
