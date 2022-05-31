@@ -22,6 +22,12 @@ const ELEMENT_DATA: Stundentafel[] = [
 })
 export class TafelComponent implements OnInit {
 
+  //counter: number[] = [1,2,3,4];
+
+
+
+
+
   displayedColumns: string[] = ['montag', 'dienstag', 'mittwoch', 'donnerstag','freitag','abc'];
   dataSource = ELEMENT_DATA;
   

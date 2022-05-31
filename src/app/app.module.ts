@@ -10,7 +10,9 @@ import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
-
+import { BlockComponent } from './component/block/block.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {MatTableModule} from '@angular/material/table';
     AppComponent,
     TafelComponent,
     ZelleComponent,
-    TabellenbeschreibungComponent
+    TabellenbeschreibungComponent,
+    BlockComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -26,10 +30,13 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent]
 })

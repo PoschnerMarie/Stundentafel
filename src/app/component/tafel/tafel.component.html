@@ -1,6 +1,11 @@
+<!--
+  <ng-container *ngFor="let day in displayedColumns" matColumnDef="{{day}}">
+    <th mat-header-cell *matHeaderCellDef> {{day}} </th>
+    <td mat-cell *matCellDef="let element"> {{element.montag}} </td>
+  </ng-container>
+-->
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-  
-    <!-- Name Column -->
+
     <ng-container matColumnDef="montag">
       <th mat-header-cell *matHeaderCellDef> Montag </th>
       <td mat-cell *matCellDef="let element"> {{element.montag}} </td>
@@ -30,7 +35,6 @@
         <th mat-header-cell *matHeaderCellDef> abc </th>
         <td mat-cell *matCellDef="let element"> {{element.abc}} </td>
       </ng-container>
-
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
