@@ -6,10 +6,12 @@ export interface Stundentafel {
   mittwoch: string;
   donnerstag: string;
   freitag: string;
+  abc: string;
 }
 
 const ELEMENT_DATA: Stundentafel[] = [
-  {montag: 'Montag', dienstag: 'Dienstag', mittwoch: 'Mittwoch', donnerstag: 'Donnerstag', freitag: 'freitag'}
+  {montag: 'Montag', dienstag: 'Dienstag', mittwoch: 'Mittwoch', donnerstag: 'Donnerstag', freitag: 'freitag', abc: 'abc'},
+  {montag: 'Montag1', dienstag: 'Dienstag2', mittwoch: 'Mittwoch3', donnerstag: 'Donnerstag4', freitag: 'freitag50',abc: 'abc'},
 ];
 
 @Component({
@@ -20,7 +22,7 @@ const ELEMENT_DATA: Stundentafel[] = [
 })
 export class TafelComponent implements OnInit {
 
-  displayedColumns: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag','Freitag'];
+  displayedColumns: string[] = ['montag', 'dienstag', 'mittwoch', 'donnerstag','freitag','abc'];
   dataSource = ELEMENT_DATA;
   
   constructor() {
