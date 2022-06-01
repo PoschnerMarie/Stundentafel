@@ -1,0 +1,32 @@
+
+<li>
+  <a class="nav-link" routerLinkActive="active" routerLink="/lehrer-list">Show Lehrer</a>
+</li>
+
+<div class="container">
+  <div>
+    <h2 class="h2">Lehrer List</h2>
+  </div>
+ 
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kuerzel</th>
+          <th scope="col">Abwesenheitsnotiz</th>
+          <th scope="col">Fortbildungs_ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lehrer of Lehrer; let i = index">
+          <td>{{lehrer.kuerzel}}</td>
+          <td>{{lehrer.Abwesenheitsnotiz}}</td>
+          <td>{{lehrer.Fortbildungs_ID}}</td>
+          <td>
+            <!--<button class="btn btn-sm btn-primary" routerLink="/edit-lehrer/{{lehrer.kuerzel}}">Edit</button>-->
+            <!--<button class="btn btn-sm btn-danger" (click)="delete(lehrer.kuerzel i)">Delete</button>-->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
