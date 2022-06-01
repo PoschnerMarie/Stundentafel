@@ -11,6 +11,7 @@ import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/mater
 import { MatInputModule } from '@angular/material/input';
 import { GridComponent } from './component/grid/grid.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { TeacherListComponent } from './component/teacher-list/teacher-list.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     TafelComponent,
     ZelleComponent,
     TabellenbeschreibungComponent,
-    GridComponent
+    GridComponent,
+    TeacherListComponent
   ],
   imports: [
     BrowserModule,
