@@ -1,0 +1,53 @@
+h5 {
+  margin-bottom: 0px;
+}
+
+.tableContainer {
+  margin-top: 1rem;
+  width: 90%;
+}
+
+.columnClass {
+  display: flex;
+  margin-left: 9rem;
+}
+
+.rowDay {
+  width: 100%;
+}
+
+.row {
+  border-bottom: 1px gray solid;
+  border-top: 1px gray solid;
+  display: flex;
+}
+
+.column {
+  border: 1px gray solid;
+  width: 90%;
+}
+
+.ContainerColumnDragAndDrop {
+  display: flex;
+  width: 100%;
+}
+
+.ColumnDragAndDrop {
+  width: 100%;
+  border-right: 1px gray solid;
+}
+
+.description {
+  display: flex;
+}
+
+.day {
+  width: 7rem;
+  border-right: 1px gray solid;
+}
+
+.lessons {
+  width: 2rem;
+  text-align: center;
+  border-right: 1px gray solid;
+}

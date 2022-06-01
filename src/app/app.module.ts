@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/tabellenbeschreibung.component';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { GridComponent } from './component/grid/grid.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     TafelComponent,
     ZelleComponent,
-    TabellenbeschreibungComponent
+    TabellenbeschreibungComponent,
+    GridComponent
   ],
   imports: [
     BrowserModule,
