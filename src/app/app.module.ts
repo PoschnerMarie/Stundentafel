@@ -8,9 +8,7 @@ import { ZelleComponent } from './component/zelle/zelle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/tabellenbeschreibung.component';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
-import { LehrerListComponent } from './component/lehrer-list/lehrer-list.component';
 
 
 @NgModule({
@@ -18,15 +16,13 @@ import { LehrerListComponent } from './component/lehrer-list/lehrer-list.compone
     AppComponent,
     TafelComponent,
     ZelleComponent,
-    TabellenbeschreibungComponent,
-    LehrerListComponent
+    TabellenbeschreibungComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule,
     HttpClientModule
   ],
   providers: [

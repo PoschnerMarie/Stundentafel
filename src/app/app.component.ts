@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { LehrerService } from './services/lehrer.service';
 
 @Component({
   selector: 'app-root',
