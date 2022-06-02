@@ -9,7 +9,8 @@ const routes: Routes = [
   {path: 'tabellenbeschriftung', component: TabellenbeschreibungComponent },
   {path: 'tafel', component: TafelComponent},
   {path: 'zelle', component: ZelleComponent},
-  {path: 'block', component: BlockComponent}
+  {path: 'block', component: BlockComponent},
+  {path: 'tabellenbeschreibung', component: TabellenbeschreibungComponent}
 
 ];
 

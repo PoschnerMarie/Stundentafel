@@ -13,6 +13,8 @@ import {MatTableModule} from '@angular/material/table';
 import { BlockComponent } from './component/block/block.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTabsModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}},
