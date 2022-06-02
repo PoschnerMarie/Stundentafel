@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/tabellenbeschreibung.component';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
+import { GridComponent } from './component/grid/grid.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { TeacherListComponent } from './component/teacher-list/teacher-list.component';
 
 
 @NgModule({
@@ -16,14 +19,17 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     TafelComponent,
     ZelleComponent,
-    TabellenbeschreibungComponent
+    TabellenbeschreibungComponent,
+    GridComponent,
+    TeacherListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}

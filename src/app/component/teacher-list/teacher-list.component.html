@@ -1,0 +1,13 @@
+<div class="kuerzelListContainer">
+  <div>
+    <h3>Lehrerübersicht</h3>
+  </div>
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="kuerzelBox" *ngFor="let kuerzel of kuerzelList" cdkDrag>{{kuerzel}}</div>
+  </div>
+</div>
+
+
+
+

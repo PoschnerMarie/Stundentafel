@@ -1,0 +1,54 @@
+
+<div class ="tableContainer">
+  <!--Beschriftung Spalten-->
+  <div class ="columnClass">
+    <div *ngFor="let class of classes" class="column">
+      <h3>{{class}}</h3>
+      
+      <!--HIER DRAD AND DROP FÜR KLASSENLEHRER-->
+      Lehrer
+    </div>
+  </div>
+  
+
+  <div class = "rowDay">
+    <div *ngFor="let day of days" class="row">
+      <!--Beschriftung Zeilen-->
+      <div class="description">
+        <div class="day">
+          <h3>{{day}}</h3>
+        </div>
+
+        <div>
+          <div *ngFor="let lesson of lessons" class="lessons">
+            <h5>{{lesson}}</h5>
+          </div>
+        </div>
+      </div>
+
+      <!--Spalten für Zuordnung-->
+      <div class="ContainerColumnDragAndDrop">
+        <div *ngFor="let class of classes" class="ColumnDragAndDrop">
+          <div *ngFor="let lesson of lessons">
+            <div class="cell">
+              <!--Input für Raum und Notiz-->
+              
+              <form>
+                <div class="cellInput">
+                  <p style="width: 3rem;">Raum:</p>
+                  <input type="text">
+                </div>
+
+                <div class="cellInput">
+                  <p style="width: 3rem;">Notiz:</p>
+                  <input type="text">
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
