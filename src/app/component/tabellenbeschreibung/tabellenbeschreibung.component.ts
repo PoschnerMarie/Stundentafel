@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-tabellenbeschreibung',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabellenbeschreibungComponent implements OnInit {
 
-  constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
