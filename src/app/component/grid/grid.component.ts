@@ -17,18 +17,18 @@ export class GridComponent implements OnInit {
     'MIP',
     'MAP'
   ];
-  done=[
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    ['']
-  ];
+  done = new Array(this.classes.length);
   constructor() { }
 
   ngOnInit(): void {
+    this.generateDoneArray();
+  }
+
+  generateDoneArray(){
+    const doneElement = [""];
+    for(let i = 0; i< this.classes.length; i++){
+      this.done[i] = [""];
+    }
   }
   
    onDrop(event: CdkDragDrop<string[]>) {
