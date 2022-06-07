@@ -1,26 +1,22 @@
 <div class="tableContainer" cdkDropListGroup>
   <!--Beschriftung Spalten-->
   <div class="columnClass">
+    
     <div *ngFor="let class of classes; index as j" class="column">
       <h3>{{class.name}}</h3>
       <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[j]" class="example-list"
         (cdkDropListDropped)="onDrop($event)">
-        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+        <div class="example-box" *ngFor="let item of done[j]" cdkDrag>{{item}}</div>
       </div>
+      
     </div>
 
-    <!--HIER DRAG AND DROP FÜR KLASSENLEHRER-->
     <div class="child">
       <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" class="example-list"
         (cdkDropListDropped)="onDrop($event)">
         <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
       </div>
     </div>
-
-
-    <div class="parent">
-    </div>
-
   </div>
 
 
