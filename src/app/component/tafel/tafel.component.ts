@@ -21,12 +21,20 @@ export class TafelComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /*
+  * Weil wir die Mthode welche ein Observable zurück gibt subscriben also dauerhaft festhalten, können wir warten
+  * bis das Dokument bzw. der Beobachter uns alle vollständingen Daten (in dem Fall ein Array vom Typ Lehrer) 
+  * gesendet hat. Danach füllen wir einfach unsere existierende Liste/unser array mit den Daten vom Beobachter.
+  * Dabei wandeln wir die einzelnen Datensätze mit Hilfe der statischen Methode fromDoc in ein Lehrer Objekt um,
+  * da unsere Liste/unser Array vom Typ Lehrer ist.
+  */
   getLehrer() {
-    this.lehrerService.getAllLehrer().subscribe((resp: any)=> {
-      this.lehrerList = resp;
-      console.log(this.lehrerList);
-      console.log(this.lehrerList[0]);
-      console.log(this.lehrerList[0].getKuerzel);
+    this.lehrerService.getAllLehrer().subscribe(document => {
+      document.forEach(lehrer=>{
+        this.lehrerList.push(Lehrer.fromDoc(lehrer));
+        this.kuerzelList.push(Lehrer.fromDoc(lehrer).kuerzel);
+        console.log(this.kuerzelList)
+      })
     })
   }
 
@@ -38,8 +46,5 @@ export class TafelComponent implements OnInit {
     })
   }
 
-}
-function getLehrer() {
-  throw new Error('Function not implemented.');
 }
 

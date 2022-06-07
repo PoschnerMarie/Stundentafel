@@ -24,4 +24,13 @@ export class Lehrer {
   getFortbildungs_ID(){
     return this.fortbildungs_ID
   }
+
+  static fromDoc(document: any){
+    const obj = new Lehrer(
+      document['Kuerzel'],
+      document['Abwesenheitsnotiz'],
+      document['Fortbildungs_ID']
+    )
+    return obj;
+  }
 }
