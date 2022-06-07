@@ -13,18 +13,6 @@ export class Lehrer {
     this.fortbildungs_ID = fortbildungs_ID;
   }
 
-  getKuerzel(){
-    return this.kuerzel
-  }
-
-  getAbwesenheitsnotiz(){
-    return this.abwesenheitsnotiz
-  }
-
-  getFortbildungs_ID(){
-    return this.fortbildungs_ID
-  }
-
   static fromDoc(document: any){
     const obj = new Lehrer(
       document['Kuerzel'],

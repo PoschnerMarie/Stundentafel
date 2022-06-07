@@ -39,10 +39,11 @@ export class TafelComponent implements OnInit {
   }
 
   getKlassen() {
-    this.klasseService.getAllKlassen().subscribe((resp: any)=> {
-      this.klassenList = resp;
-      console.log(this.klassenList);
-      console.log(this.klassenList[0]);
+    this.klasseService.getAllKlassen().subscribe(document=> {
+      document.forEach(klasse =>{
+        this.klassenList.push(Klasse.fromDoc(klasse));
+        console.log(this.klassenList[0].K_Bezeichnung)
+      })
     })
   }
 
