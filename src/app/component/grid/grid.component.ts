@@ -1,5 +1,5 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem, DragDropModule, copyArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-grid',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class GridComponent implements OnInit {
+
+  @Input()  doneArray_Index!: number | string;
 
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
   classes = [ {id:1, name:'FS191' },{id:2, name:'FS192'},{id:3, name:'FI191'},{id:4, name:'FI192'},{id:5, name:'FS181'}, {id:6, name:'FS181'},{id:7, name:'FI181'}];
@@ -25,44 +27,29 @@ export class GridComponent implements OnInit {
   }
 
   generateDoneArray(){
-    const doneElement = [""];
     for(let i = 0; i< this.classes.length; i++){
-      this.done[i] = [""];
+      this.done[i] = new Array(0);
     }
   }
   
    onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      console.log(event.container.data);
       
     } else if(event.previousContainer.id =="cdk-drop-list-0"){
       copyArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-        console.log(this.done)  
+        console.log(event.container.data)
     } else{
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-        console.log(this.done)
     }
   };
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
-  }
   
   }
 
