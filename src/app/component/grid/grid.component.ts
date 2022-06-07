@@ -33,21 +33,26 @@ export class GridComponent implements OnInit {
   }
   
    onDrop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      
-    } else if(event.previousContainer.id =="cdk-drop-list-0"){
-      copyArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+      if(event.container.data.length != 0){
+        event.container.data.pop();
+        console.log("delete")
         console.log(event.container.data)
-    } else{
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
+      }
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        
+      } else if(event.previousContainer.id =="cdk-drop-list-0"){
+        copyArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+          console.log(event.container.data)
+      } else{
+        transferArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+      }
   };
 
   
