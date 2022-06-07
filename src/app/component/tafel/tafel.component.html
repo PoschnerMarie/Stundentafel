@@ -3,3 +3,10 @@
 
 <input type="text" #Klasse_Bezeichnung>
 <input type="text" #Klasse_Kuerzel>
+
+
+<div *ngFor="let lehrer of lehrerList">
+  <p>{{lehrer}}</p>
+</div>
+
+<pre>{{lehrerList | json}}</pre>

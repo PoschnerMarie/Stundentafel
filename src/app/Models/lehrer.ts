@@ -1,7 +1,27 @@
-export class Lehrer {                                                       
+export class Lehrer { 
+  kuerzel: string;
+  abwesenheitsnotiz: string;
+  fortbildungs_ID: number;
+
   constructor(
     kuerzel: string,
     abwesenheitsnotiz: string,
     fortbildungs_ID: number
-  ){}
+  ){
+    this.kuerzel = kuerzel;
+    this.abwesenheitsnotiz = abwesenheitsnotiz;
+    this.fortbildungs_ID = fortbildungs_ID;
+  }
+
+  getKuerzel(){
+    return this.kuerzel
+  }
+
+  getAbwesenheitsnotiz(){
+    return this.abwesenheitsnotiz
+  }
+
+  getFortbildungs_ID(){
+    return this.fortbildungs_ID
+  }
 }
