@@ -48,4 +48,3 @@ export class TafelComponent implements OnInit {
   }
 
 }
-

@@ -3,7 +3,7 @@
   <div class="columnClass">
     
     <div *ngFor="let class of classes; index as j" class="column">
-      <h3>{{class.name}}</h3>
+      <h3>{{class}}</h3>
       <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[j]" class="example-list"
         (cdkDropListDropped)="onDrop($event)">
         <div class="example-box" *ngFor="let item of done[j]" cdkDrag [attr.data_index]="j">{{item}}</div>
