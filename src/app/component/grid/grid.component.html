@@ -1,60 +1,56 @@
-<div class="parent">
 <div class="tableContainer" cdkDropListGroup>
   <!--Beschriftung Spalten-->
-  <div class="columnClass">
-    <div *ngFor="let class of classes; index as j" class="column">
-      <h3>{{class}}</h3>
-      <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[j]" class="example-list"
-        (cdkDropListDropped)="onDrop($event)">
-        <div class="example-box" *ngFor="let item of done[j]" cdkDrag [attr.data_index]="j">{{item}}</div>
+  <div>
+    <div class="columnClass">
+      <div *ngFor="let class of classes; index as j" class="column">
+        <h3>{{class}}</h3>
+        <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[j]" class="example-list"
+          (cdkDropListDropped)="onDrop($event)">
+          <div class="example-box" *ngFor="let item of done[j]" cdkDrag [attr.data_index]="j">{{item}}</div>
+        </div>
       </div>
     </div>
-    </div>
-<div class="child1">
-  <div class="rowDay">
-    <div *ngFor="let day of days" class="row">
-      <!--Beschriftung Zeilen-->
-      <div class="description">
-        <div class="day">
-          <h3>{{day}}</h3>
-        </div>
-        <div>
-          <div *ngFor="let lesson of lessons" class="lessons">
-            <h5>{{lesson}}</h5>
+    <div class="rowDay">
+      <div *ngFor="let day of days" class="row">
+        <!--Beschriftung Zeilen-->
+        <div class="description">
+          <div class="day">
+            <h3>{{day}}</h3>
           </div>
-        </div>
-      </div>
-      <!--Spalten für Zuordnung-->
-      <div class="ContainerColumnDragAndDrop">
-        <div *ngFor="let class of classes" class="ColumnDragAndDrop">
-          <div *ngFor="let lesson of lessons">
-            <div class="cell">
-              <!--Input für Raum und Notiz-->
-              <form>
-                <div class="cellInput">
-                  <p style="width: 3rem;">Raum:</p>
-                  <input type="text">
-                </div>
-                <div class="cellInput">
-                  <p style="width: 3rem;">Notiz:</p>
-                  <input type="text">
-                </div>
-              </form>
+          <div>
+            <div *ngFor="let lesson of lessons" class="lessons">
+              <h5>{{lesson}}</h5>
             </div>
           </div>
+        </div>
+        <!--Spalten für Zuordnung-->
+        <div class="ContainerColumnDragAndDrop">
+          <div *ngFor="let class of classes" class="ColumnDragAndDrop">
+            <div *ngFor="let lesson of lessons">
+              <div class="cell">
+                <!--Input für Raum und Notiz-->
+                <form>
+                  <div class="cellInput">
+                    <p style="width: 3rem;">Raum:</p>
+                    <input type="text">
+                  </div>
+                  <div class="cellInput">
+                    <p style="width: 3rem;">Notiz:</p>
+                    <input type="text">
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>          
         </div>
-        </div>
-        
-          </div>
-          <div class="child">
-            <h5>Kürzel</h5>
-            <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" class="example-list"
-              (cdkDropListDropped)="onDrop($event)">
-              <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>}
-            </div>
       </div>
-
     </div>
-    
+  </div>
+  <div>
+    <h5>Kürzel</h5>
+    <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" class="example-list"
+      (cdkDropListDropped)="onDrop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
     </div>
+  </div>
+</div>
