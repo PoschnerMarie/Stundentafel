@@ -16,6 +16,7 @@ export class GridComponent implements OnInit {
   @Input()  doneArray_Index!: number | string;
 
   zellenAnzahl:number=0;
+  plusone:number=0;
 
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
   lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -43,14 +44,14 @@ export class GridComponent implements OnInit {
   generateZelleArray(){
     const x = this.lessons.length * this.days.length * this.classes.length;
     for(let i = 0; i< x; i++){
-       this.zellen = new Array(0);
+       this.zellen[i] = new Array(0);
+       this.plusone=this.plusone+1;
     }
     this.zellenAnzahl= this.zellen.length;
-    this.plusOne()
   }
 
   plusOne(){
-    this.zellenAnzahl;
+    return this.plusone;
   }
 
   onDrop(event: CdkDragDrop<string[]>) {

@@ -53,9 +53,9 @@
                     <p style="width: 3rem;">Notiz:</p>
                     <input type="text">
                   </div> 
-                  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[zellenAnzahl]" class="example-list"
+                  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="zellen[plusOne()]" class="example-list"
                     (cdkDropListDropped)="onDrop($event)">
-                    <div class="example-box" *ngFor="let item of done[zellenAnzahl]" cdkDrag [attr.data_index]="zellenAnzahl">{{item}}</div>
+                    <div class="example-box" *ngFor="let item of zellen[plusOne()]" cdkDrag [attr.data_index]="zellenAnzahl">{{item}}</div>
                   </div>
                 </form>
               </div>
