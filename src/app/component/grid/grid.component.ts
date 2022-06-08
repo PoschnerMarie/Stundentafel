@@ -59,7 +59,6 @@ export class GridComponent implements OnInit {
     }
   };
   
-
   getLehrer() {
     this.lehrerService.getAllLehrer().subscribe(document => {
       document.forEach(lehrer=>{

@@ -15,13 +15,8 @@ export class KlasseService {
   }
 
   updateKlassenlehrer(klasse: Klasse) {
-    console.log(klasse);
     const body = JSON.stringify(klasse);
-    console.log("json:")
-    console.log(body);
-
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-
     return this.httpClient.post('http://localhost:8081/addklassenlehrer', body, {headers: headers}).subscribe(x=>console.log(x));
   }
 }
