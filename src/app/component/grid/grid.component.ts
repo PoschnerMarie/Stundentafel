@@ -17,10 +17,10 @@ export class GridComponent implements OnInit {
 
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
   lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
-
   todo: string[] = [];
   done!:Array<string>[];
   classes: string[] = [];
+  klasse!: Klasse;
   
   constructor(public lehrerService: LehrerService, public klasseService: KlasseService, private router: Router) { }
 
@@ -76,6 +76,15 @@ export class GridComponent implements OnInit {
       this.generateDoneArray();
     })
   }
-  
+
+  setAllKlassenlehrer() {
+    for(let i = 0; i< this.classes.length; i++){
+      let klassenBezeichnung = this.classes[i];
+      let tempKuerzel: string[] = this.done[i];
+      let klassenKuerzel = tempKuerzel[0];
+      this.klasse = new Klasse(klassenBezeichnung, klassenKuerzel);
+      this.klasseService.updateKlassenlehrer(this.klasse)
+    }
+  }
 }
 

@@ -1,6 +1,6 @@
 <div class="tableContainer" cdkDropListGroup>
-  <!--Beschriftung Spalten-->
   <div>
+    <button (click)="setAllKlassenlehrer()">speicherKlassenlehrer</button>
     <div class="columnClass">
       <div *ngFor="let class of classes; index as j" class="column">
         <h3>{{class}}</h3>
