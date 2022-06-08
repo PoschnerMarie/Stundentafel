@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.css']
 })
-
 export class GridComponent implements OnInit {
 
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
@@ -30,19 +29,20 @@ export class GridComponent implements OnInit {
       this.done[i] = [""];
     }
   }
-  
+  movementCount: number=0;
+
    onDrop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
       console.log(event.container.data);
-      
-    } else if(event.previousContainer.id =="cdk-drop-list-0"){
+    } 
+    else if(event.previousContainer.id =="cdk-drop-list-0"){
       copyArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
         event.currentIndex);
-        console.log(this.done)  
-    } else{
+        console.log(this.done)  }
+     else{
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
@@ -50,6 +50,7 @@ export class GridComponent implements OnInit {
         console.log(this.done)
     }
   };
+  
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

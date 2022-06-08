@@ -1,5 +1,12 @@
 h5 {
   text-align: center;
+  padding: 0%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 mat-form-field {
@@ -36,6 +43,7 @@ input {
 
 .tableContainer {
   margin-top: 1rem;
+  margin: auto;
 }
 
 .columnClass {
@@ -55,7 +63,7 @@ input {
 
 .column {
   border: 1px gray solid;
-  width: 90%;
+  width: 95%;
 }
 
 .ContainerColumnDragAndDrop {
@@ -96,15 +104,17 @@ input {
 }
 
 .parent {
-  display: flex;
+  display: inline-block; 
 }
 
-.child1 {
-  width: 80%;
+  .child1 {
+    flex: 1;
+    z-index: 5;
+  }
+
+.child {
+  width: 10%;
 }
 
-.child1 {
-  flex: 1;
-  margin: 10px;
-  z-index: 5;
-}
+
+
