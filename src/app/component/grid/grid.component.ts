@@ -15,12 +15,16 @@ export class GridComponent implements OnInit {
 
   @Input()  doneArray_Index!: number | string;
 
+  zellenAnzahl:number=0;
+
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
   lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
   todo: string[] = [];
   done!:Array<string>[];
+  zellen!:Array<string>[];
   classes: string[] = [];
+
   
   constructor(public lehrerService: LehrerService, public klasseService: KlasseService, private router: Router) { }
 
@@ -35,7 +39,20 @@ export class GridComponent implements OnInit {
       this.done[i] = new Array(0);
     }
   }
-  
+
+  generateZelleArray(){
+    const x = this.lessons.length * this.days.length * this.classes.length;
+    for(let i = 0; i< x; i++){
+       this.zellen = new Array(0);
+    }
+    this.zellenAnzahl= this.zellen.length;
+    this.plusOne()
+  }
+
+  plusOne(){
+    this.zellenAnzahl;
+  }
+
   onDrop(event: CdkDragDrop<string[]>) {
     //SOLL DAFÜR SEIN; DASS BEI KUERZEL LISTE NICHTS EINGEFPGT WRDEN KANN
     if(event.container.element.nativeElement.id != "cdk-drop-list-0"){
