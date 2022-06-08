@@ -39,30 +39,24 @@ export class GridComponent implements OnInit {
   
   onDrop(event: CdkDragDrop<string[]>) {
     //SOLL DAFÜR SEIN; DASS BEI KUERZEL LISTE NICHTS EINGEFPGT WRDEN KANN
-    if(event.container.element.nativeElement.id == "cdk-drop-list-0"){
-      
-    }
-
-
-    if(event.container.data.length != 0){
-      event.container.data.pop();
-      console.log("delete")
-      console.log(event.container.element.nativeElement.id)
-    }
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      
-    } else if(event.previousContainer.id =="cdk-drop-list-0"){
-      copyArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-        console.log(event.container)
-    } else{
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
+    if(event.container.element.nativeElement.id != "cdk-drop-list-0"){
+      if(event.container.data.length != 0){
+        event.container.data.pop();
+      }
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        
+      } else if(event.previousContainer.id =="cdk-drop-list-0"){
+        copyArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+      } else{
+        transferArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+      }
     }
   };
 
