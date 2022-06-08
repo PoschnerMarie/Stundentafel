@@ -3,6 +3,10 @@ h5 {
   padding: 0%;
 }
 
+h3 {
+  font-weight: 500;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -15,26 +19,23 @@ mat-form-field {
 }
 .example-list {
   border: solid 1px #ccc;
-  min-height: 60px;
+  min-height: 30px;
   background: white;
   border-radius: 4px;
-  overflow: hidden;
-  display: block;
+  margin: auto;
+  width: 90%;
 }
 
 .example-box {
-  padding: 20px 10px;
   border-bottom: solid 1px #ccc;
   color: rgba(0, 0, 0, 0.87);
-  display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
   background: white;
   font-size: 14px;
-  min-height: 65px;
+  min-height: 30px;
+  text-align: center;
 }
 
 input {
@@ -43,13 +44,13 @@ input {
 
 .tableContainer {
   margin-top: 1rem;
-  margin: auto;
   display: flex;
 }
 
 .columnClass {
   display: flex;
   margin-left: 9rem;
+  background-color: rgb(213, 230, 255);
 }
 
 .rowDay {
@@ -65,6 +66,7 @@ input {
 .column {
   border: 1px gray solid;
   width: 95%;
+  text-align: center;
 }
 
 .ContainerColumnDragAndDrop {
@@ -77,6 +79,11 @@ input {
   border-right: 1px gray solid;
 }
 
+.columnTeachers {
+  margin-left: 1rem;
+  text-align: center;
+}
+
 .description {
   display: flex;
 }
@@ -84,6 +91,8 @@ input {
 .day {
   width: 7rem;
   border-right: 1px gray solid;
+  background-color: rgb(213, 230, 255);
+  text-align: center;
 }
 
 .lessons {
@@ -92,6 +101,7 @@ input {
   border-right: 1px gray solid;
   border-bottom: 1px gray solid;
   height: 6.5rem;
+  background-color: rgb(235 243 254);
 }
 
 .cell {
@@ -116,6 +126,14 @@ input {
 .child {
   width: 10%;
 }
-
+.primary_button {
+  background-color: rgb(213, 230, 255);
+  border: none;
+  font-size: medium;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 1rem;
+  height: 2rem;
+  cursor: pointer;
+}
 
 
