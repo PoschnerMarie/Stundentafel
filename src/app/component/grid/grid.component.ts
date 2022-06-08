@@ -1,5 +1,10 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem, DragDropModule, copyArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Klasse } from 'src/app/Models/klasse';
+import { Lehrer } from 'src/app/Models/lehrer';
+import { KlasseService } from 'src/app/services/klasse.service';
+import { LehrerService } from 'src/app/services/lehrer.service';
 
 @Component({
   selector: 'app-grid',
@@ -8,62 +13,69 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridComponent implements OnInit {
 
+  @Input()  doneArray_Index!: number | string;
+
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
-  classes = [ {id:1, name:'FS191' },{id:2, name:'FS192'},{id:3, name:'FI191'},{id:4, name:'FI192'},{id:5, name:'FS181'}, {id:6, name:'FS181'},{id:7, name:'FI181'}];
   lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
-  todo = [
-    'BOE',
-    'MIP',
-    'MAP'
-  ];
-  done = new Array(this.classes.length);
-  constructor() { }
+
+  todo: string[] = [];
+  done!:Array<string>[];
+  classes: string[] = [];
+  
+  constructor(public lehrerService: LehrerService, public klasseService: KlasseService, private router: Router) { }
 
   ngOnInit(): void {
-    this.generateDoneArray();
+    this.getKlassen();
+    this.getLehrer();
   }
 
   generateDoneArray(){
-    const doneElement = [""];
+    this.done = new Array(this.classes.length);
     for(let i = 0; i< this.classes.length; i++){
-      this.done[i] = [""];
+      this.done[i] = new Array(0);
     }
   }
-  movementCount: number=0;
-
-   onDrop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-      console.log(event.container.data);
-    } 
-    else if(event.previousContainer.id =="cdk-drop-list-0"){
-      copyArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-        console.log(this.done)  }
-     else{
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-        console.log(this.done)
+  
+  onDrop(event: CdkDragDrop<string[]>) {
+    //SOLL DAFÜR SEIN; DASS BEI KUERZEL LISTE NICHTS EINGEFPGT WRDEN KANN
+    if(event.container.element.nativeElement.id != "cdk-drop-list-0"){
+      if(event.container.data.length != 0){
+        event.container.data.pop();
+      }
+      if (event.previousContainer === event.container) {
+        moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+        
+      } else if(event.previousContainer.id =="cdk-drop-list-0"){
+        copyArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+      } else{
+        transferArrayItem(event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex);
+      }
     }
   };
   
 
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
+  getLehrer() {
+    this.lehrerService.getAllLehrer().subscribe(document => {
+      document.forEach(lehrer=>{
+        this.todo.push(Lehrer.fromDoc(lehrer).kuerzel);
+      })  
+    })
+  }
+
+  getKlassen() {
+    this.klasseService.getAllKlassen().subscribe(document=> {
+      document.forEach(klasse =>{
+        this.classes.push(Klasse.fromDoc(klasse).K_Bezeichnung);
+      })
+      this.generateDoneArray();
+    })
   }
   
-  }
+}
 
