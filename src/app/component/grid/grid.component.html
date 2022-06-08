@@ -51,7 +51,7 @@
     </div>
   </div>
   <div>
-    <h5>Kürzel</h5>
+    <h3>Kürzel</h3>
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" class="example-list"
       (cdkDropListDropped)="onDrop($event)">
       <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
