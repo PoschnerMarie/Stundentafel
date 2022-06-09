@@ -3,15 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TafelComponent } from './component/tafel/tafel.component';
-import { ZelleComponent } from './component/zelle/zelle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TabellenbeschreibungComponent } from './component/tabellenbeschreibung/tabellenbeschreibung.component';
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import { HttpClientModule } from '@angular/common/http';
 import { GridComponent } from './component/grid/grid.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import { TeacherListComponent } from './component/teacher-list/teacher-list.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -20,11 +16,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 @NgModule({
   declarations: [
     AppComponent,
-    TafelComponent,
-    ZelleComponent,
-    TabellenbeschreibungComponent,
-    GridComponent,
-    TeacherListComponent
+    GridComponent
   ],
   imports: [
     BrowserModule,

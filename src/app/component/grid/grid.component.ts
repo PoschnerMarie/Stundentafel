@@ -16,7 +16,7 @@ export class GridComponent implements OnInit {
   @Input()  doneArray_Index!: number | string;
 
   days: string[] = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag'];
-  lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
+  lessons: number[] = [1, 2, 3, 4, 5];
   todo: string[] = [];
   done!:Array<string>[];
   doneCell!:Array<string>[][];

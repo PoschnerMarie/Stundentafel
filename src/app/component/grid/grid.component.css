@@ -5,6 +5,14 @@ h5 {
 
 h3 {
   font-weight: 500;
+  margin-bottom: 0;
+}
+
+p {
+  text-align: left;
+  font-size: small;
+  margin-bottom: 3px;
+  margin-left: 0.75rem;
 }
 
 .wrapper {
@@ -49,7 +57,6 @@ input {
 
 .columnClass {
   display: flex;
-  margin-left: 9rem;
   background-color: rgb(213, 230, 255);
 }
 
@@ -100,13 +107,13 @@ input {
   text-align: center;
   border-right: 1px gray solid;
   border-bottom: 1px gray solid;
-  height: 6.5rem;
+  height: 5rem;
   background-color: rgb(235 243 254);
 }
 
 .cell {
   border-bottom: 1px gray solid;
-  height: 6.5rem;
+  height: 5rem;
 }
 
 .cellInput {
