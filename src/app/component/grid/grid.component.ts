@@ -19,6 +19,7 @@ export class GridComponent implements OnInit {
   lessons: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
   todo: string[] = [];
   done!:Array<string>[];
+  doneCell!:Array<string>[][];
   classes: string[] = [];
   klasse!: Klasse;
   
@@ -35,9 +36,21 @@ export class GridComponent implements OnInit {
       this.done[i] = new Array(0);
     }
   }
+
+  generateDoneCellArray(){
+    let zeilen = this.days.length*this.lessons.length;
+    let spalten = this.classes.length;
+    this.doneCell = new Array();
+    for(let i = 0; i< spalten; i++){
+      this.doneCell[i] = [];
+      for(let j = 0; j < zeilen; j++){
+        this.doneCell[i][j] = new Array(0);
+      }
+    }
+  }
   
   onDrop(event: CdkDragDrop<string[]>) {
-    //SOLL DAFÜR SEIN; DASS BEI KUERZEL LISTE NICHTS EINGEFPGT WRDEN KANN
+    console.log(event.container)
     if(event.container.element.nativeElement.id != "cdk-drop-list-0"){
       if(event.container.data.length != 0){
         event.container.data.pop();
@@ -73,6 +86,7 @@ export class GridComponent implements OnInit {
         this.classes.push(Klasse.fromDoc(klasse).K_Bezeichnung);
       })
       this.generateDoneArray();
+      this.generateDoneCellArray();
     })
   }
 

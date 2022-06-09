@@ -24,8 +24,8 @@
         </div>
         <!--Spalten für Zuordnung-->
         <div class="ContainerColumnDragAndDrop">
-          <div *ngFor="let class of classes" class="ColumnDragAndDrop">
-            <div *ngFor="let lesson of lessons">
+          <div *ngFor="let class of classes; let x=index;" class="ColumnDragAndDrop">
+            <div *ngFor="let lesson of lessons ; let y=index;">
               <div class="cell">
                 <!--Input für Raum und Notiz-->
                 <form>
@@ -36,6 +36,16 @@
                   <div class="cellInput">
                     <p style="width: 3rem;">Notiz:</p>
                     <input type="text">
+                  </div>
+                  <!--
+                  <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="doneCell[x][y]" class="example-list"
+                    (cdkDropListDropped)="onDrop($event)" [innerText]="x+''+y">
+                    <div class="example-box" *ngFor="let item of doneCell[x][y]" cdkDrag [attr.data_index]="[x][y]" [innerText]="item">{{item}}</div>
+                  </div>
+                  -->
+                  <div class="cellInput">
+                    <p style="width: 3rem;">Lehrer:</p>
+                    <input id="lehrerInput{{x}}{{y}}" type="text">
                   </div>
                 </form>
               </div>
