@@ -23,7 +23,7 @@ export class GridComponent implements OnInit {
 
   todo: string[] = [];
   done!:Array<string>[];
-  zellen!:Array<string>[];
+  zellen:Array<string>[] = [];
   classes: string[] = [];
 
   
@@ -32,6 +32,7 @@ export class GridComponent implements OnInit {
   ngOnInit(): void {
     this.getKlassen();
     this.getLehrer();
+    this.generateZelleArray();
   }
 
   generateDoneArray(){
@@ -43,27 +44,32 @@ export class GridComponent implements OnInit {
 
   generateZelleArray(){
     const x = this.lessons.length * this.days.length * this.classes.length;
+    console.log(this.zellen)
     for(let i = 0; i< x; i++){
        this.zellen[i] = new Array(0);
        this.plusone=this.plusone+1;
+       this.zellenAnzahl= this.zellen.length;
     }
-    this.zellenAnzahl= this.zellen.length;
+    console.log(this.zellen)
   }
 
   plusOne(){
     return this.plusone;
+    console.log("test");
   }
+  
 
   onDrop(event: CdkDragDrop<string[]>) {
     //SOLL DAFÜR SEIN; DASS BEI KUERZEL LISTE NICHTS EINGEFPGT WRDEN KANN
     if(event.container.element.nativeElement.id != "cdk-drop-list-0"){
-      if(event.container.data.length != 0){
+      if(event.container.data.length!=0){
         event.container.data.pop();
       }
       if (event.previousContainer === event.container) {
         moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
         
-      } else if(event.previousContainer.id =="cdk-drop-list-0"){
+      }
+      else if(event.previousContainer.id =="cdk-drop-list-0"){
         copyArrayItem(event.previousContainer.data,
           event.container.data,
           event.previousIndex,
