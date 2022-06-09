@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { GridComponent } from './component/grid/grid.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { TeacherListComponent } from './component/teacher-list/teacher-list.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { TeacherListComponent } from './component/teacher-list/teacher-list.comp
     BrowserAnimationsModule,
     MatFormFieldModule,
     HttpClientModule,
-    DragDropModule
+    DragDropModule,
+    MatInputModule, 
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}

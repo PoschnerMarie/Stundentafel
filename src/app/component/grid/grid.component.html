@@ -1,6 +1,21 @@
 <div class="tableContainer" cdkDropListGroup>
   <div>
     <div class="columnClass">
+      <div>    
+        <mat-label>Block 1</mat-label>
+        <mat-form-field appearance="fill">
+          <mat-label>Start-/ Enddatum</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date">
+            <input matEndDate placeholder="End date">
+          </mat-date-range-input>
+          <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <mat-label>KW3-4</mat-label>
+        <mat-label>-> 1KW</mat-label>
+    </div>
       <div *ngFor="let class of classes; index as j" class="column">
         <h3>{{class}}</h3>
         <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done[j]" class="example-list"

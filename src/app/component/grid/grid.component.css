@@ -136,4 +136,8 @@ input {
   cursor: pointer;
 }
 
+.mat-form-field {
+  position: relative;
+  width: 145px;
+}
 
