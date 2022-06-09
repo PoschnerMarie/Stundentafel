@@ -9,7 +9,7 @@ import { ZelleComponent } from './component/zelle/zelle.component';
 
 const routes: Routes = [
   {path: 'tabellenbeschriftung', component: TabellenbeschreibungComponent },
-  { path: 'lehrer-list', component: LehrerListComponent },
+  {path: 'lehrer-list', component: LehrerListComponent },
   {path: 'tafel', component: TafelComponent},
   {path: 'teacherlist', component: TeacherListComponent},
   {path: 'grid', component: GridComponent},
