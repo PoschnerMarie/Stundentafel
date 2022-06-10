@@ -1,6 +1,9 @@
 <div class="tableContainer" cdkDropListGroup>
+  <!--Die Spalte für die Tabelle-->
   <div>
+    <!--Kopfzeile-->
     <div class="columnClass">
+      <!--Tabellenbeschriftung-->
       <div>    
         <h3>Block 1</h3>
         <mat-form-field appearance="fill">
@@ -15,7 +18,8 @@
         </mat-form-field>
         <mat-label>KW3-4</mat-label>
         <mat-label>-> 1KW</mat-label>
-    </div>
+      </div>
+      <!--Zeile für die Klassen und Klassenlehrer-->
       <div *ngFor="let class of classes; index as j" class="column">
         <h3>{{class}}</h3>
         <p>Klassenlehrer:</p>
@@ -25,6 +29,7 @@
         </div>
       </div>
     </div>
+    <!---->
     <div class="rowDay">
       <div *ngFor="let day of days" class="row">
         <!--Beschriftung Zeilen-->
@@ -71,12 +76,13 @@
       </div>
     </div>
   </div>
+  <!--Die Spalte für die Lehrerkuerzel-->
   <div class="columnTeachers">
     <h3>Kürzel</h3>
     <div cdkDropList #todoList="cdkDropList" [cdkDropListData]="todo" class="example-list"
       (cdkDropListDropped)="onDrop($event)">
       <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
     </div>
-    <button (click)="setAllKlassenlehrer()" class="primary_button">Speichen</button>
+    <button (click)="setAllKlassenlehrer()" class="primary_button">Speichern</button>
   </div>
 </div>
